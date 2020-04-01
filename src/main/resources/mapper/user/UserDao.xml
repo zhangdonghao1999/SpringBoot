@@ -32,5 +32,18 @@
             );
 
     </insert>
+    <!--根据id查询用户数据-->
+    <select id="getUserById" parameterType="java.lang.Integer" resultType="com.sxgf.springboot.demo.user.entity.UserEntity">
+        select * from user where id = ${id}
+
+    </select>
+    <!--根据id修改用户数据-->
+    <update id="updateUserById" parameterType="com.sxgf.springboot.demo.user.entity.UserEntity" >
+    UPDATE `zzz`.`user`
+            SET `username` = #{username},
+            `password` = #{password}
+            WHERE
+                `id` = ${id};
+    </update>
 
 </mapper>
